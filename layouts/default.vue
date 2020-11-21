@@ -1,11 +1,13 @@
 <template>
-  <div>
-    <v-app-bar
-      color="#00E676"
-    >
-      <v-toolbar-title>
-        My Skills Profile
-      </v-toolbar-title>
-    </v-app-bar>
-  </div>
+  <v-container>
+    <v-card>
+      <v-toolbar
+        color="#1DE9B6"
+      >
+        <v-toolbar-title>MyProfile</v-toolbar-title>
+      </v-toolbar>
+      <Nuxt />
+      <v-spacer />
+    </v-card>
+  </v-container>
 </template>
