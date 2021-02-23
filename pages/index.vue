@@ -48,11 +48,11 @@
             <v-card-subtitle>Software Engineer</v-card-subtitle>
 
             <v-card-text>
-              Skills,</br>
+              Skills</br>
               Ruby,JavaScript,SQL,GitHub,Linux,AWS,Scrum</br>
-              Framework,</br>
+              Frameworks</br>
               Ruby on Rails,Vue.js,Nuxt.js</br>
-              Other Fields,</br>
+              Other Fields</br>
               Inferential statistics,Bayesian statistics,Accounting,Finance,Quants analysis
             </v-card-text>
 
