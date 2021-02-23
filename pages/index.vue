@@ -1,92 +1,146 @@
 <template>
-  <v-layout
-    column
-    justify-center
-    align-center
-  >
-    <v-flex
-      xs12
-      sm8
-      md6
+  <v-container>
+    <v-card
+      justify-center
+      class="mx-auto"
     >
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
-      </div>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-            >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
+      <v-system-bar
+        color="pink darken-2"
+        dark
+      >
+        <v-spacer />
+
+        <v-icon>mdi-window-minimize</v-icon>
+
+        <v-icon>mdi-window-maximize</v-icon>
+
+        <v-icon>mdi-close</v-icon>
+      </v-system-bar>
+
+      <v-app-bar
+        dark
+        color="pink"
+      >
+        <v-app-bar-nav-icon />
+
+        <v-toolbar-title
+          justify-center
+        >
+          My Profile
+        </v-toolbar-title>
+
+        <v-spacer />
+
+        <v-btn icon>
+          <v-icon>mdi-magnify</v-icon>
+        </v-btn>
+      </v-app-bar>
+      <v-row dense>
+        <v-col cols="12">
+          <v-card
+            color="#385F73"
+            dark
           >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
+            <v-card-title class="headline">
+              Self-Introduction
+            </v-card-title>
+
+            <v-card-subtitle>Software Engineer</v-card-subtitle>
+
+            <v-card-text>
+              Skills,</br>
+              Ruby,JavaScript,SQL,GitHub,Linux,AWS,Scrum</br>
+              Framework,</br>
+              Ruby on Rails,Vue.js,Nuxt.js</br>
+              Other Fields,</br>
+              Inferential statistics,Bayesian statistics,Accounting,Finance,Quants analysis
+            </v-card-text>
+
+            <v-card-actions>
+              <v-btn text href="https://github.com/LFTKazu">
+                GitHub
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-col>
+
+        <v-col
+          v-for="(item, i) in items"
+          :key="i"
+          cols="12"
+        >
+          <v-card
+            :color="item.color"
+            dark
           >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-  </v-layout>
+            <div class="d-flex flex-no-wrap justify-space-between">
+              <div>
+                <v-card-title
+                  class="headline"
+                  v-text="item.title"
+                />
+
+                <v-card-subtitle v-text="item.artist" />
+
+                <v-card-actions>
+                  <v-btn
+                    v-if="item.artist === ''"
+                    class="ml-2 mt-3"
+                    fab
+                    icon
+                    height="40px"
+                    right
+                    width="40px"
+                  >
+                    <v-icon>mdi-play</v-icon>
+                  </v-btn>
+
+                  <v-btn
+                    v-else
+                    class="ml-2 mt-5"
+                    outlined
+                    rounded
+                    small
+                    href="https://fargate.hatenablog.com/"
+                  >
+                    MyBlog
+                  </v-btn>
+                </v-card-actions>
+              </div>
+
+              <v-avatar
+                class="ma-3"
+                size="125"
+                tile
+              >
+                <v-img :src="item.src" />
+              </v-avatar>
+            </div>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-card>
+  </v-container>
+  </v-card>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
 export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  }
+  data: () => ({
+    items: [
+      {
+        color: '#1F7087',
+        src: 'icon9.png',
+        title: 'Experiences',
+        artist: 'Smartphone E-commerce site Replace,Cosme E-commerce site Replace,Cryptocurrency exchange'
+      },
+      {
+        color: '#952175',
+        src: '',
+        title: 'To Be Continue...',
+        artist: ''
+      }
+    ]
+  })
 }
 </script>
