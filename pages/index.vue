@@ -42,7 +42,7 @@
             dark
           >
             <v-card-title class="headline">
-              Self-Introduction
+              Self-Introduction.
             </v-card-title>
 
             <v-card-subtitle>Software Engineer</v-card-subtitle>
